@@ -6,9 +6,14 @@ import { Component, Prop } from '@stencil/core';
   shadow: true
 })
 export class MyComponent {
-
   @Prop() first: string;
   @Prop() last: string;
+
+  static getPhaser(): Promise<any> {
+    return import('phaser').then(p2 => {
+      console.log(p2);
+    });
+  }
 
   render() {
     return (
